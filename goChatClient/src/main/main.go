@@ -6,8 +6,11 @@ import (
 )
 
 var name string
+var hostStr string
 func main() {
-   conn,err := net.Dial("tcp", "localhost:8080")
+   fmt.Println("Enter url to connect to")
+   fmt.Scanln(&hostStr)
+   conn,err := net.Dial("tcp", hostStr)
    if err != nil {
       fmt.Println("There was an error: ")
       fmt.Println(err)
